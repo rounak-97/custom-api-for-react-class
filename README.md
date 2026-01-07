@@ -1,121 +1,49 @@
 # Custom API for React Class
 
-A production-style backend REST API built using **Node.js, Express, and
-MongoDB**.
+A RESTful backend API built with **Node.js, Express, MongoDB, and Swagger**, providing authentication and student CRUD operations for React applications.
 
-This project follows a clean **MVC architecture** and demonstrates
-authentication, authorization, validation, CRUD operations, pagination,
-and Swagger-based API documentation.
+**Live Swagger Docs**  
+https://custom-api-for-react-class-1.onrender.com/api-docs/
 
-------------------------------------------------------------------------
+---
+
+## Features
+- JWT-based authentication
+- Student CRUD APIs (protected)
+- Input validation (Joi)
+- Swagger UI documentation
+- MongoDB Atlas + Render deployment
+
+---
 
 ## Tech Stack
+Node.js • Express • MongoDB • JWT • Swagger • Render
 
--   Node.js
--   Express.js
--   MongoDB
--   Mongoose ODM
--   JWT (Authentication & Authorization)
--   JOI (Request Validation)
--   Swagger (API Documentation)
+---
 
-------------------------------------------------------------------------
+## API Endpoints
 
-## Key Features
+### Auth
+- POST `/api/auth/register`
+- POST `/api/auth/login`
+- GET `/api/auth/profile` (JWT)
 
-### Authentication & Authorization
+### Students (JWT)
+- POST `/api/students/create`
+- GET `/api/students/all`
+- PUT `/api/students/update/{id}`
+- DELETE `/api/students/delete/{id}`
 
--   User registration and login
--   Password hashing with bcrypt
--   JWT-based authentication
--   Protected profile endpoint
+---
 
-### Student Management
-
--   Create student (JWT protected)
--   Fetch students with pagination and search
--   Update student (ownership-based access)
--   Delete student (ownership-based access)
-
-### Validation & Security
-
--   Centralized JOI validation
--   JWT middleware protection
--   User-level data isolation (ownership check)
-
-### API Documentation
-
--   Swagger UI integrated using **swagger-jsdoc**
--   Trainer-style Swagger setup
--   Interactive API testing via browser
-
-------------------------------------------------------------------------
-
-## Project Structure
-
-    app/
-     ├── controllers/     # Business logic
-     ├── models/          # Mongoose schemas
-     ├── routes/          # API routes with Swagger docs
-     ├── middlewares/     # Auth & validation middleware
-     ├── config/          # Database connection
-    swagger/
-     └── swagger.json     # Swagger base configuration
-    app.js                # Express app setup
-    server.js             # Server entry point
-
-------------------------------------------------------------------------
-
-## Local Setup & Installation
-
-### 1. Install dependencies
-
-``` bash
-npm install
+## Environment Variables
+```
+PORT
+MONGODB_URI
+JWT_SECRET
 ```
 
-### 2. Environment configuration
-
-Create a `.env` file using `.env.example`:
-
-``` env
-PORT=5500
-MONGODB_URL=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-```
-
-### 3. Run the application
-
-``` bash
-npm run dev
-```
-
-The server will start at:
-
-    http://localhost:5500
-
-------------------------------------------------------------------------
-
-## API Documentation (Swagger)
-
-Swagger UI is available at:
-
-    http://localhost:5500/api-docs
-
-All authentication and student APIs are fully documented and testable
-from the browser.
-
-------------------------------------------------------------------------
-
-## Authentication Usage
-
-Protected endpoints require a JWT token.
-
-Pass the token in request headers:
-
-    Authorization: Bearer <your_jwt_token>
-
-------------------------------------------------------------------------
+---
 
 ## Author
 **Rounak Kantha**
