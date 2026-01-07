@@ -9,6 +9,10 @@
       {
         "url": "http://localhost:5500",
         "description": "Local server"
+      },
+      {
+        "url": "https://custom-api-for-react-class-1.onrender.com",
+        "description": "Production server"
       }
     ],
     "tags": [
