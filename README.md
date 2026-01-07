@@ -7,9 +7,6 @@ This project follows a clean **MVC architecture** and demonstrates
 authentication, authorization, validation, CRUD operations, pagination,
 and Swagger-based API documentation.
 
-This repository is suitable for **interview discussion, academic
-evaluation, and backend portfolio review**.
-
 ------------------------------------------------------------------------
 
 ## Tech Stack
