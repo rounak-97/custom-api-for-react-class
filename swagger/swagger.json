@@ -13,6 +13,10 @@
       {
         "url": "https://custom-api-for-react-class-1.onrender.com",
         "description": "Production server"
+      },
+      {
+        "url": "https://custom-api-for-react-class-1.onrender.com/api-docs/",
+        "description": "Render Deployment server"
       }
     ],
     "tags": [
