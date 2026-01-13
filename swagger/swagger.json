@@ -1,15 +1,22 @@
 {
   "swaggerDefinition": {
-    "openapi": "3.0.0",
     "info": {
       "title": "Custom API for React Class",
       "version": "1.0.0",
-      "description": "Auth & Student CRUD API Documentation.\n\n🔐 Authentication:\n1. Login using /api/auth/login to get JWT token.\n2. Click the Authorize button in Swagger.\n3. Enter token as: Bearer <JWT_TOKEN>\n4. Access protected APIs (Profile, Student Create/Update/Delete)."
+      "description": "Auth & Student CRUD API Documentation by Rounak Kantha"
     },
     "servers": [
       {
-        "url": "https://custom-api-for-react-class-1.onrender.com",
-        "description": "Production server (Render)"
+        "url": "http://localhost:5500",
+        "description": "Local server"
+      },
+      {
+        "url": "",
+        "description": "Production server"
+      },
+      {
+        "url": "",
+        "description": "Render Deployment server"
       }
     ],
     "tags": [
@@ -19,17 +26,15 @@
       },
       {
         "name": "Student",
-        "description": "Student CRUD APIs (JWT Protected)"
+        "description": "Student CRUD APIs"
       }
     ],
-    "components": {
-      "securitySchemes": {
-        "BearerAuth": {
-          "type": "http",
-          "scheme": "bearer",
-          "bearerFormat": "JWT",
-          "description": "Enter JWT token as: Bearer <token>"
-        }
+    "securityDefinitions": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer <token>\""
       }
     }
   },
