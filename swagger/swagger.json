@@ -1,9 +1,10 @@
 {
   "swaggerDefinition": {
+    "openapi": "3.0.0",
     "info": {
       "title": "Custom API for React Class",
       "version": "1.0.0",
-      "description": "Auth & Student CRUD API Documentation by Rounak Kantha"
+      "description": "Auth & Student CRUD API Documentation by Rounak Kantha\n\n **JWT Authentication Guide**\n\n 1️ First login using **POST /api/auth/login** to get a JWT token.\n\n 2️ Click the **Authorize 🔓** button (top-right corner of this page).\n\n 3️ Enter token in this format:\n\n```\nBearer <your_jwt_token_here>\n```\n\n 4️ After authorization, you can access all 🔒 protected APIs like Profile, Create Student, Update Student, Delete Student.\n\n ⚠️ APIs with a lock icon require JWT token."
     },
     "servers": [
       {
@@ -11,32 +12,35 @@
         "description": "Local server"
       },
       {
-        "url": "https://custom-api-for-react-class-1.onrender.com",
-        "description": "Production server"
-      },
-      {
         "url": "https://custom-api-for-react-class-1.onrender.com/api-docs/",
-        "description": "Render Deployment server"
+        "description": "Production server (Render)"
       }
     ],
     "tags": [
       {
         "name": "Auth",
-        "description": "Authentication APIs"
+        "description": "Authentication APIs (Register, Login, Profile)"
       },
       {
         "name": "Student",
-        "description": "Student CRUD APIs"
+        "description": "Student CRUD APIs (JWT Protected)"
       }
     ],
-    "securityDefinitions": {
-      "Bearer": {
-        "type": "apiKey",
-        "name": "Authorization",
-        "in": "header",
-        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer <token>\""
+    "components": {
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "description": "Enter JWT token as: **Bearer <token>**"
+        }
       }
-    }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ]
   },
   "apis": [
     "./app/routes/*.js"
