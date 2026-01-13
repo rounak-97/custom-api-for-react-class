@@ -3,7 +3,7 @@
     "info": {
       "title": "Custom API for React Class",
       "version": "1.0.0",
-      "description": "Auth & Student CRUD API Documentation by Rounak Kantha"
+      "description": "Auth & Student CRUD API Documentation by Rounak Kantha\n\n **JWT Authentication Guide**\n\n 1.First login using **POST /api/auth/login** to get a JWT token.\n\n 2.Click the **Authorize 🔓** button (top-right corner of this page).\n\n 3.Enter token in this format:\n\n```\nBearer <your_jwt_token_here>\n```\n\n 4.After authorization, you can access all 🔒 protected APIs like Profile, Create Student, Update Student, Delete Student.\n\n ⚠️ APIs with a lock icon require JWT token."
     },
     "servers": [
       {
@@ -11,22 +11,22 @@
         "description": "Local server"
       },
       {
-        "url": "",
+        "url": "https://custom-api-for-react-class.onrender.com/",
         "description": "Production server"
       },
       {
-        "url": "",
+        "url": "https://custom-api-for-react-class.onrender.com/api-docs/",
         "description": "Render Deployment server"
       }
     ],
     "tags": [
       {
         "name": "Auth",
-        "description": "Authentication APIs"
+        "description": "Authentication APIs (Register, Login, Profile)"
       },
       {
         "name": "Student",
-        "description": "Student CRUD APIs"
+        "description": "Student CRUD APIs (JWT Protected)"
       }
     ],
     "securityDefinitions": {
@@ -34,7 +34,7 @@
         "type": "apiKey",
         "name": "Authorization",
         "in": "header",
-        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer <token>\""
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer <token>\" \n\n Enter JWT token as: **Bearer <token>**"
       }
     }
   },
