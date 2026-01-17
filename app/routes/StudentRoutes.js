@@ -57,7 +57,6 @@ const {
  *         description: Student created successfully
  */
 
-// CREATE
 router.post(
   '/create',
   authMiddleware,
@@ -93,7 +92,6 @@ router.post(
  *         description: Students fetched successfully
  */
 
-// FETCH (Pagination + Search + Validation)
 router.get(
   '/all',
   authMiddleware,
@@ -111,6 +109,11 @@ router.get(
  *     security:
  *       - Bearer: []
  *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         required: true
+ *         type: string
+ *         description: Bearer <JWT token>
  *       - in: path
  *         name: id
  *         required: true
@@ -131,7 +134,6 @@ router.get(
  *         description: Student updated successfully
  */
 
-// UPDATE
 router.put(
   '/update/:id',
   authMiddleware,
@@ -149,6 +151,11 @@ router.put(
  *     security:
  *       - Bearer: []
  *     parameters:
+ *       - in: header
+ *         name: Authorization
+ *         required: true
+ *         type: string
+ *         description: Bearer <JWT token>
  *       - in: path
  *         name: id
  *         required: true
@@ -158,7 +165,6 @@ router.put(
  *         description: Student deleted successfully
  */
 
-// DELETE
 router.delete(
   '/delete/:id',
   authMiddleware,
